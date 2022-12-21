@@ -1,0 +1,32 @@
+mixin modal()
+  .modal.js-modal
+    .container.modal__container
+      .modal__item.js-modal__item(data-target='modal-delivery' data-animation="fadeInUp" data-speed="700")
+        button.modal__close.js-modal__close(type='button')
+          span
+        .modal__content
+          h2.modal__title Форма обратной связи
+          form.modal__form(action="#" method="get")
+            .modal__name
+              +field({
+                label: 'Ваше имя *',
+                type: 'text',
+                name: 'name',
+                placeholder: false,
+                tabindex: 1,
+                required: true,
+              })
+            .modal__phone
+              +input-mask({
+                label: 'Телефон *',
+                type: 'tel',
+                name: 'phone',
+                placeholder: false,
+                tabindex: 1,
+                required: true,
+              })
+            .modal__button
+              +button-color({
+                text: 'Отправить',
+              })
+            p.modal__text Нажимая на кнопку, вы соглашаетесь на обработку <span>персональных данных</span>

@@ -1,0 +1,90 @@
+include ../../uikit/elements/elements-page/elements-page.pug
+include ../../uikit/tables/tables-page/tables-page.pug
+include ../../uikit/cards/cards-page/cards-page.pug
+
+
+
+block variables
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title #{title}
+		meta(name="description", content=description)
+		block head
+	body(class=pageClass)
+		include ../../sys/img/svg-sptites/svg-sptites.svg
+		.wrapper
+			+header({
+				floatingBlock: true,
+				logo: {
+					href: 'index.html',
+					logoIcon: require("../../static/favicon.svg"),
+				},
+				menuItems: [
+
+					{text: 'Меню ресторана', href: "http://changeme", submenuItems: false},
+					{text: 'Бизнес-ланч', href: "http://changeme", submenuItems: false},
+					{text: 'Детокс', href: "http://changeme", submenuItems: false},
+					{text: 'Рационы', href: "http://changeme", submenuItems: false},
+				
+				],
+			})
+			block content
+			
+			+footer({
+				logo:{
+					href: 'index.html',
+					logoIcon: require("../../static/favicon.svg"),
+				},
+				navItems:[
+					{
+						title: "Контакты", 
+						links: [
+							{href: 'http://chagneme', text: 'О компании'},
+						]
+					},
+					{
+						title: "Оплата", 
+						links: [
+							{href: 'http://chagneme', text: 'Доставка'},
+						]
+					},
+					{
+						title: "Публичная оферта", 
+						links: [
+							{href: 'http://chagneme', text: 'Политика конфиденциальности'},
+						]
+					}
+				],
+				subscribe: {
+					title: 'Подписка',
+					text: 'Получайте специальные предложения и новости сервиса',
+					field: {
+						js: false, 
+						dropdownId: false,
+						label: false, 
+						type: 'email', 
+						placeholder: 'Email', 
+						tabindex: 1,
+						arrowSvg: {
+							id:'#arrow-forward',
+							width: 17,
+							height: 18,
+						}
+					}
+				},
+				copy:{
+					text: 'Copyright © 2018 Toxin отель. Все права защищены.',
+					icons:[
+						{src: require('../../assets/img/social/facebook.svg'), alt: 'facebook'},
+						{src: require('../../assets/img/social/instagramm.svg'), alt: 'instagramm'},
+						{src: require('../../assets/img/social/twiter.svg'), alt: 'twiter'},
+					]
+				}
+			})
+			
+		block scripts

@@ -1,0 +1,128 @@
+extends ../../sys/pug/main.pug
+
+block variables
+	- var title = 'Test';
+	- var description = 'Description';
+block scripts
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=657c13da-cbea-44f0-8362-2a2beb55e357&lang=ru_RU" ></script>
+	
+block content
+	main.main
+		section.main-slider
+			.main-slider__slider
+				+slider()
+		.services
+			.container
+				.services__row
+					.services__column
+						.services__item.item-services
+							.item-services__icon
+								img(src=require("../../assets/img/services/services1.png"), alt="service")
+							.item-services__text Используем только натуральные продукты, блюда без консервантов и искусственных добавок.
+					.services__column
+						.services__item.item-services
+							.item-services__icon
+								img(src=require("../../assets/img/services/services4.png"), alt="service")
+							.item-services__text Сбалансированное здоровое меню, соответствующее КБЖУ
+					.services__column
+						.services__item.item-services
+							.item-services__icon
+								img(src=require("../../assets/img/services/services3.png"), alt="service")
+							.item-services__text По желанию подберем программу тренировок и составим индивидуальное КБЖУ для любого уровня подготовки.
+					.services__column
+						.services__item.item-services
+							.item-services__icon
+								img(src=require("../../assets/img/services/services2.png"), alt="service")
+							.item-services__text Бесплатная доставка, чтобы сэкономить массу времени и сил для более важных и приятных дел.
+		section.rations
+			.container
+				h2.rations__title Рационы
+				.rations__row
+					.rations__column
+						.rations__item.item-rations 
+							.item-rations__image.ibg
+								img(src=require("../../assets/img/rations/image7.jpg"), alt="")
+							.item-rations__body
+								h5.item-rations__title Баланс
+								p.item-rations__text Здоровое питание на каждый день для тех, кто  заботится о своем ежедневном рационе.
+								p.item-rations__subtext ~1 800 ккал
+							.item-rations__footer
+								.item-rations__price 1 190 ₽
+								.item-rations__button
+									+button-color({
+										text: 'Выбрать',
+									})
+					.rations__column
+						.rations__item.item-rations 
+							.item-rations__image.ibg
+								img(src=require("../../assets/img/rations/image8.jpg"), alt="")
+							.item-rations__body
+								h5.item-rations__title Баланс
+								p.item-rations__text Здоровое питание на каждый день для тех, кто  заботится о своем ежедневном рационе.
+								p.item-rations__subtext ~1 800 ккал
+							.item-rations__footer
+								.item-rations__price 1 190 ₽
+								.item-rations__button
+									+button-color({
+										text: 'Выбрать',
+									})
+					.rations__column
+						.rations__item.item-rations 
+							.item-rations__image.ibg
+								img(src=require("../../assets/img/rations/image9.jpg"), alt="")
+							.item-rations__body
+								h5.item-rations__title ЛАЙТ
+								p.item-rations__text Четырехразовое меню для похудения, поддержания формы и создания рельефа.
+								p.item-rations__subtext ~1 400 ккал
+							.item-rations__footer
+								.item-rations__price 1 050 ₽
+								.item-rations__button
+									+button-color({
+										text: 'Выбрать',
+									})
+					.rations__column
+						.rations__item.item-rations 
+							.item-rations__image.ibg
+								img(src=require("../../assets/img/rations/image10.jpg"), alt="")
+							.item-rations__body
+								h5.item-rations__title масс
+								p.item-rations__text Сбалансированное питание для поддержания оптимальной формы при тренировках.
+								p.item-rations__subtext ~1 800 ккал
+							.item-rations__footer
+								.item-rations__price 1 490 ₽
+								.item-rations__button
+									+button-color({
+										text: 'Выбрать',
+									})
+		section.about
+			.container
+				.about__body
+					.about__image.ibg
+						img(src=require("../../assets/img/about/aboutus.jpg"), alt="image about us")
+					.about__content
+						h3.about__title о нас
+						p.about__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi, neque, et leo nulla nisl. Neque parturient elementum habitasse etiam nec. Fermentum justo nam nibh vitae pellentesque integer. Imperdiet habitant tortor est amet tortor viverra. Nulla eget commodo, adipiscing arcu in et risus in.
+						p.about__text Cras eu molestie consectetur amet at euismod. Nunc elementum lorem pharetra cursus risus eu. Ac feugiat arcu etiam eget sem urna tincidunt lacus. Nec morbi ultrices nulla accumsan adipiscing. Elementum sagittis eu placerat non molestie luctus gravida. Risus laoreet nunc lectus orci. Vitae at augue sagittis. Sed faucibus ultrices elementum faucibus varius leo, vitae. Molestie semper habitant varius eleifend nisi faucibus. 
+		section.delivery(id='order')
+			.container
+				.delivery__body
+					.delivery__content
+						h2.delivery__title Условия ДОСТАВКИ
+						p.delivery__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi, neque, et leo nulla nisl. Neque parturient elementum habitasse etiam nec.
+						p.delivery__text Fermentum justo nam nibh vitae pellentesque integer. Imperdiet habitant tortor est amet tortor viverra. 
+						.delivery__button.js-modal-button(data-path="modal-delivery")
+							+button-color({
+									text: 'Связаться с нами',
+								})
+					.delivery__map
+						+map()
+						+modal()
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug
+		//- include ./modules/module/module.pug

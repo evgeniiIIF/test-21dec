@@ -1,0 +1,32 @@
+mixin floating-block()
+  .header__content.content-header.js-floating-block
+    .content-header__place.content-header__item
+      +it({
+        class: 'content-header',
+        svg: {
+          id: '#place',
+          width: 13,
+          height: 16,
+        },
+        text: 'Тамбов',
+      })
+    a.content-header__phone(href='tel:+79156600909').content-header__item
+      +it({
+        class: 'content-header',
+        svg: {
+          id: '#phone',
+          width: 18,
+          height: 18,
+        },
+        text: '+7 (915) 660 09-09',
+      })
+    .content-header__time.content-header__item
+      +it({
+        class: 'content-header',
+        svg: {
+          id: '#clock',
+          width: 16,
+          height: 16,
+        },
+        text: ' 09:00-21:00',
+      })
